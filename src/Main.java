@@ -24,7 +24,7 @@ public class Main {
 
         // get input station data
         Scanner scaner = new Scanner(System.in);
-        int[] data = {
+        int[] cmdaCode = {
                 3540, 12, 166, 222, -262, -18, -116, -336, -172, 152, 402, -58, -122,
                 -26, 60, -228, -610, -282, -148, 132, -260, 208, 10, -194, 370, -162,
                 100, -160, -420, 132, 22, -386, 16, 44, -178, -206, -286, -142, 120,
@@ -38,8 +38,12 @@ public class Main {
         walshTable = generateWalshMatrix(N);
         // inialization
         CDMA_sequence = new int[N];
+        //add what there is from cmdaCode to CMDA_sequence
+        for(int i = 0; i < cmdaCode.length; i++)
+            CDMA_sequence[i] = cmdaCode[i];
+
         System.out.println("walshTable: ");
-        computeCDMA(data, N);
+        //computeCDMA(data, N);
 
         do{
             System.out.println("Input station number: ");
